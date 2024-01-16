@@ -1,28 +1,29 @@
-import { IconUserCircle } from '@tabler/icons-react';
+import { useState } from 'react';
 import Button from './components/Button';
-import Card from './components/Card';
+import PlaceContentCenter from './components/PlaceContentCenter';
 
 function App() {
+    const [count, setCounter] = useState(0);
+
+    function handleClick() {
+        setCounter((x) => x + 1);
+    }
+
     return (
-        <div className={'bg-slate-900 grid place-content-center min-h-screen'}>
-            <div className={'max-w-md w-full'}>
-                <Card>
-                    <Card.Title>Hello React</Card.Title>
-                    <Card.Body>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Repellendus porro corporis necessitatibus eligendi
-                        cupiditate facere rerum qui. Quaerat explicabo minima
-                        quod neque error at accusamus, cum unde quam dicta
-                        reprehenderit!
-                    </Card.Body>
-                    <Card.Footer>
-                        <Button text='register'>
-                            <IconUserCircle />
-                        </Button>
-                    </Card.Footer>
-                </Card>
+        <PlaceContentCenter>
+            <h1 className={'text-5xl font-bold'}>{count}</h1>
+            <div className={'mt-5 flex items-center gap-2'}>
+                <Button onClick={handleClick} text={'+1'}></Button>
+                <Button
+                    onClick={() => {
+                        handleClick();
+                        handleClick();
+                        handleClick();
+                    }}
+                    text={'+3'}
+                ></Button>
             </div>
-        </div>
+        </PlaceContentCenter>
     );
 }
 
