@@ -1,10 +1,10 @@
+import RefHooks from './components/Hooks';
 import PlaceContentCenter from './components/PlaceContentCenter';
-import Todo from './components/Todo';
 
 function App() {
     return (
         <PlaceContentCenter>
-            <Todo />
+            <RefHooks isFocused />
         </PlaceContentCenter>
     );
 }
