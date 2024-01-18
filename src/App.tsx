@@ -1,10 +1,10 @@
-import RefHooks from './components/Hooks';
 import PlaceContentCenter from './components/PlaceContentCenter';
+import UserList from './components/UserList';
 
 function App() {
     return (
         <PlaceContentCenter>
-            <RefHooks isFocused />
+            <UserList />
         </PlaceContentCenter>
     );
 }

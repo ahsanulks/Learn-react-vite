@@ -4,11 +4,26 @@ import Card from './Card';
 function RefHooks({ isFocused = false }: { isFocused?: boolean }): ReactNode {
     const inputRef = useRef<HTMLInputElement | null>(null);
 
+    // will be called always if rerender
     useEffect(() => {
         if (isFocused && inputRef.current) {
             inputRef.current.focus();
         }
-    }, [isFocused]);
+    });
+
+    // will be called on first render
+    // useEffect(() => {
+    //     if (isFocused && inputRef.current) {
+    //         inputRef.current.focus();
+    //     }
+    // }, []);
+
+    // will be called when isFocused get rerender
+    // useEffect(() => {
+    //     if (isFocused && inputRef.current) {
+    //         inputRef.current.focus();
+    //     }
+    // }, [isFocused]);
 
     return (
         <Card>
