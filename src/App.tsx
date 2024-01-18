@@ -1,10 +1,10 @@
+import Joke from './components/GetJoke';
 import PlaceContentCenter from './components/PlaceContentCenter';
-import UserList from './components/UserList';
 
 function App() {
     return (
         <PlaceContentCenter>
-            <UserList />
+            <Joke />
         </PlaceContentCenter>
     );
 }
